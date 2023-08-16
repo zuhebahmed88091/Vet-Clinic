@@ -101,20 +101,13 @@ JOIN visits vi ON a.id = vi.animals_id
 JOIN vets v ON vi.vets_id = v.id
 ORDER BY recent_visit DESC LIMIT 1;
 
-SELECT COUNT(vi.date_of_visit) AS visit_count
-FROM visits vi
-JOIN vets v ON vi.vets_id = v.id
-JOIN animals a ON a.id = vi.animals_id
-JOIN specializations s ON s.vets_id = v.id
-AND s.species_id = a.species_id
-
 SELECT COUNT(v.date_of_visit) AS num_visits_no_specialization
 FROM visits v
 JOIN animals a ON v.animals_id = a.id
 LEFT JOIN specializations s ON v.vets_id = s.vets_id AND a.species_id = s.species_id
 WHERE s.vets_id IS NULL;
 
-SELECT s.name AS species_name, vt.name, COUNT(*) AS num_visits
+SELECT s.name AS species_name, vt.name COUNT(*) AS num_visits
 FROM visits v
 JOIN animals a ON v.animals_id = a.id
 JOIN species s ON a.species_id = s.id
