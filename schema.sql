@@ -27,3 +27,25 @@ CREATE TABLE species (
 ALTER TABLE animals DROP COLUMN species;
 ALTER TABLE animals ADD species_id INT REFERENCES species (id);
 ALTER TABLE animals ADD owner_id INT REFERENCES owners (id);
+
+-- DAY 4
+
+CREATE TABLE vets (
+	id SERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	age INT NOT NULL,
+	date_of_graduation DATE NOT NULL
+);
+
+CREATE TABLE specializations (
+	id SERIAL NOT NULL PRIMARY KEY,
+	vets_id INT REFERENCES vets (id),
+	species_id INT REFERENCES species (id)
+);
+
+CREATE TABLE visits (
+	id SERIAL NOT NULL PRIMARY KEY,
+	vets_id INT REFERENCES vets (id),
+	animals_id INT REFERENCES animals (id),
+	date_of_visit DATE NOT NULL
+);
