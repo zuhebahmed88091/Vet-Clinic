@@ -47,3 +47,13 @@ SELECT ROUND(AVG(weight_kg), 2) FROM animals;
 SELECT CASE WHEN neutered = 't' THEN 'Neutered' ELSE 'Not Neutered' END AS neutered_status, SUM(escape_attempts) AS total_escape_attempts FROM animals GROUP BY neutered_status;
 SELECT MIN(weight_kg),MAX(weight_kg),species FROM animals GROUP BY species;
 SELECT ROUND(AVG(escape_attempts), 2) AS avg_escape_attempts, species FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
+-- DAY 3
+
+SELECT * FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name = 'Melody Pond';
+SELECT * FROM animals JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
+SELECT * FROM owners LEFT JOIN animals ON owners.id = animals.owner_id;
+SELECT COUNT(species_id) AS total_animals, species.name FROM animals JOIN species ON animals.species_id = species.id GROUP BY species.name;
+SELECT * FROM animals JOIN owners ON animals.owner_id = owners.id JOIN species ON animals.species_id = species.id WHERE species.name = 'Digimon' AND owners.id = 2;
+SELECT * FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.id = 5 AND animals.escape_attempts = 0;
+SELECT o.full_name, COUNT(a.id) AS max_animal_count FROM owners o JOIN animals a ON o.id = a.owner_id GROUP BY o.id ORDER BY max_animal_count DESC LIMIT 1;
