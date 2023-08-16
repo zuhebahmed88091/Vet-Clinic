@@ -10,3 +10,20 @@ CREATE TABLE animals (
 );
 
 ALTER TABLE animals ADD species VARCHAR(100);
+
+-- DAY 3
+
+CREATE TABLE owners (
+	id SERIAL NOT NULL PRIMARY KEY,
+	full_name VARCHAR(100) NOT NULL,
+	age INT NOT NULL
+);
+
+CREATE TABLE species (
+	id SERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE animals DROP COLUMN species;
+ALTER TABLE animals ADD species_id INT REFERENCES species (id);
+ALTER TABLE animals ADD owner_id INT REFERENCES owners (id);
