@@ -52,3 +52,18 @@ CREATE TABLE visits (
 
 -- Add an email column to your owners table
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+EXPLAIN ANALYZE SELECT * FROM visits WHERE vets_id = 2;
+EXPLAIN ANALYZE SELECT * FROM owners WHERE email = 'owner_18327@mail.com';
+
+CREATE INDEX idx_animal_id ON visits (animals_id);
+ANALYZE visits;
+EXPLAIN ANALYZE SELECT COUNT(*) FROM visits where animals_id = 4;
+
+CREATE INDEX idx_vets_id ON visits (vets_id);
+ANALYZE visits;
+EXPLAIN ANALYZE SELECT id,animals_id,date_of_visit FROM visits where vets_id = 2;
+CREATE INDEX idx_email ON owners (email);
+ANALYZE visits;
+EXPLAIN ANALYZE SELECT id,full_name FROM owners where email = 'owner_18327@mail.com';
