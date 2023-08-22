@@ -30,6 +30,9 @@
 
 **Vet Clinic** is a relational database that has been designed to establish the foundational data framework for a veterinary clinic. It encompasses the creation of a table dedicated to storing comprehensive details about animals, facilitating the insertion of initial data into this table, and enabling seamless querying of the information stored within it.
 
+### Database Schema Diagram
+![image](diagram.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -47,6 +50,7 @@
 - **Create a Row in the Database.**
 - **Insert Data into the Table.**
 - **Query The Data.**
+- **Database performance audit**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,6 +87,12 @@ you@your-Pc-name:~$ cd Vet-Clinic
 - GitHub: [&nbsp; &nbsp; @githubhandle](https://github.com/zuhebahmed88091)
 - Twitter: [&nbsp; &nbsp; @twitterhandle](https://twitter.com/ZuhebAhmed88091)
 - LinkedIn: [&nbsp; LinkedIn](https://www.linkedin.com/in/zuheb-ahmed/)
+
+👤 **Kimita  Wanjohi**
+
+- GitHub: [@kimitawanjohi](https://github.com/kimitawanjohi)
+- Twitter: [@myro_dev](https://twitter.com/myro_dev)
+- LinkedIn: [kimitawanjohi](https://linkedin.com/in/kimitawanjohi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
